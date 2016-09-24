@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">HackGT16</string>
     <string name="title_activity_welcome_screen">WelcomeScreen</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
 </resources>
