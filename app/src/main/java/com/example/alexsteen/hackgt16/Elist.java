@@ -7,7 +7,7 @@ import java.util.LinkedList;
  */
 public class Elist {
     private String name;
-    private LinkedList<String> exercises;
+    private LinkedList<exerciseEntry> exercises;
     private static int total_num_lists = 0;
 
     public Elist(String name) {
@@ -24,7 +24,7 @@ public class Elist {
         name = newName;
     }
 
-    public LinkedList<String> getElist() {
+    public LinkedList<exerciseEntry> getElist() {
         return exercises;
     }
 

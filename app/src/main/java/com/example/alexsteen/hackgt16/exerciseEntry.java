@@ -14,4 +14,28 @@ public class exerciseEntry {
         num_reps = reps;
     }
 
+    public void changeName(String newName) {
+        name = newName;
+    }
+
+    public void changeSets(int num) {
+        num_sets = num;
+    }
+
+    public void changeReps(int reps) {
+        num_reps = reps;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getReps() {
+        return num_reps;
+    }
+
+    public int getSets() {
+        return num_sets;
+    }
+
 }
