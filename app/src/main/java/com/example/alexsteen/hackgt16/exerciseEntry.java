@@ -8,6 +8,7 @@ public class exerciseEntry {
     private int num_sets;
     private int num_reps;
 
+    //this is a change
     public exerciseEntry(String name, int sets, int reps) {
         this.name = name;
         num_sets = sets;
