@@ -21,6 +21,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginScreen" />
         <activity android:name=".FitnessHomepage"></activity>
+        <activity android:name=".Registration"></activity>
     </application>
 
 </manifest>
