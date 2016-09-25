@@ -98,6 +98,23 @@ public class FitnessDB extends SQLiteOpenHelper{
         return entries;
     }
 
+    public LinkedList<Elist> getELists() {
+        LinkedList<Elist> eLists = new LinkedList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + this.username + "-" + TABLE_FITNESS + ";",null);
+        c.moveToFirst();
+        while(!c.isAfterLast()) {
+            String id = c.getString(c.getColumnIndex(COLUMN_LIST_ID));
+            if(!eLists.contains(id)) {
+                eLists.add(new Elist(id));
+            }
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
+        return eLists;
+    }
+
     public boolean isCompleted(String listID, String name) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM " + this.username + "-" + TABLE_FITNESS + "WHERE"
