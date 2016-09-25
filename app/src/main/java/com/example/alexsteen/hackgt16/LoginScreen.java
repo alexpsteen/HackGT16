@@ -16,6 +16,7 @@ public class LoginScreen extends AppCompatActivity {
     Toast toast;
     private SharedPreferences.Editor editCurrentUser;
     private SharedPreferences currentUser;
+    private userDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +26,13 @@ public class LoginScreen extends AppCompatActivity {
         currentUser = getSharedPreferences("CurrentUser", MODE_PRIVATE);
         editCurrentUser = currentUser.edit();
         editCurrentUser.apply();
-
-        username = "aliciachan";
-        password = "12345";
+        db = new userDB(this);
 
     }
 
-    public void goToWelcomeScreen(View view) {
-        if (validator(username, password)) {
+    public void goToWelcomeScreen(View view) throws Exception{
+        System.out.println(validator());
+        if (validator()) {
             Intent i = new Intent(this, WelcomeScreen.class);
             startActivity(i);
         } else {
@@ -45,17 +45,23 @@ public class LoginScreen extends AppCompatActivity {
         }
     }
 
-    private boolean validator(String u, String p) {
+    private boolean validator() throws Exception{
         EditText user = (EditText) findViewById(R.id.usernameblank);
         EditText pass = (EditText) findViewById(R.id.passwordblank);
+        String username = user.getText().toString();
+        String password = pass.getText().toString();
+        System.out.println("Username: " + username + " and password is " + password);
+        boolean x = db.authenticateUser(username,password);
+        return x;
 
-        if (user.getText().toString().equals(u)) {
-            if (pass.getText().toString().equals(p)) {
-                editCurrentUser.putString("username", user.getText().toString());
-                editCurrentUser.commit();
-                return true;
-            }
-        }
-        return false;
+
+//        if (user.getText().toString().equals(u)) {
+//            if (pass.getText().toString().equals(p)) {
+//                editCurrentUser.putString("username", user.getText().toString());
+//                editCurrentUser.commit();
+//                return true;
+//            }
+//        }
+//        return false;
     }
 }

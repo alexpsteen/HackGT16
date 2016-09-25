@@ -93,6 +93,7 @@ public class userDB extends SQLiteOpenHelper{
         }
         c.close();
         db.close();
+        System.out.println("Real PW: " + realPassword);
         return realPassword.equals(password);
     }
 

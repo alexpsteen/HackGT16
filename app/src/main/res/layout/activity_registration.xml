@@ -191,7 +191,7 @@
         android:textSize="30sp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:onClick="goToWelcomeScreen"
+        android:onClick="createUser"
         />
 
     <CheckBox
