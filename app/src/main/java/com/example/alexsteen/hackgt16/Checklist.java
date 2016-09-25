@@ -31,6 +31,9 @@ public class Checklist extends AppCompatActivity {
     public void addEntry(View view) {
         EditText newEntry = (EditText) findViewById(R.id.newEntry);
         Elist elist = new Elist(newEntry.getText().toString());
+        if (elist.equals("") || elist == null) {
+            return;
+        }
         exercises.add(0, elist);
 
         newEntry.setText(defaultNew);
@@ -46,7 +49,10 @@ public class Checklist extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
                 Intent i = new Intent(Checklist.this, ExerciseList.class);
-                i.putExtra("ElistName", id);
+                Bundle bundle = new Bundle();
+
+                bundle.putString("bundleID", exercises.get(position).toString());
+                i.putExtras(bundle);
                 startActivity(i);
             }
         });
