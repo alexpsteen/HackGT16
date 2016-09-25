@@ -15,5 +15,40 @@
         android:layout_height="wrap_content"
         android:text = "Timer"/>
 
-    
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:textColor="#000"
+        android:textSize="100dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button android:id="@+id/stopButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Stop"
+        android:onClick="stopTime"
+        android:layout_below="@+id/chronometer"
+        android:layout_toEndOf="@+id/chronometer"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="45dp" />
+
+    <Button android:id = "@+id/startButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Start"
+        android:onClick="startTime"
+        android:layout_alignBaseline="@+id/stopButton"
+        android:layout_alignBottom="@+id/stopButton"
+        android:layout_toStartOf="@+id/chronometer"
+        android:layout_marginEnd="12dp" />
+
+    <Button android:id = "@+id/resetButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text = "Reset"
+        android:onClick="resetTime"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/stopButton" />
 </RelativeLayout>
