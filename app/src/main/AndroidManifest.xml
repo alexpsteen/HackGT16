@@ -24,7 +24,8 @@
         <activity android:name=".ExerciseList" />
         <activity android:name=".FitnessHomepage" />
         <activity android:name=".Timer" />
-        <activity android:name=".Registration"></activity>
+        <activity android:name=".Registration" />
+        <activity android:name=".StepCounter"></activity>
     </application>
 
 </manifest>

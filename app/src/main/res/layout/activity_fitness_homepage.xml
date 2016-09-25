@@ -16,6 +16,13 @@
         android:onClick="goToChecklist"
         android:text = "Checklist"/>
 
+    <Button android:id = "@+id/StepCountButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="goToStepCounter"
+        android:layout_marginTop="56dp"
+        android:text = "Step Count"/>
+
     <Button android:id="@+id/TimerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

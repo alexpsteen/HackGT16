@@ -18,6 +18,11 @@ public class FitnessHomepage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToStepCounter(View view) {
+        Intent intent = new Intent(this, StepCounter.class);
+        startActivity(intent);
+    }
+
     public void goToTimer(View view) {
         Intent intent = new Intent(this, Timer.class);
         startActivity(intent);

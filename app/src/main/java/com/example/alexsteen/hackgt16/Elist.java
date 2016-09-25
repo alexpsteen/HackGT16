@@ -31,6 +31,4 @@ public class Elist {
     public String toString() {
         return name;
     }
-
-
 }

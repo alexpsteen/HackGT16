@@ -20,10 +20,10 @@ public class Checklist extends AppCompatActivity {
 
     private SharedPreferences.Editor editCurrentUser;
     private SharedPreferences currentUser;
-
+    private LinkedList<String> exerName;
+    private String username;
 
     private FitnessDB fitDB;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +36,12 @@ public class Checklist extends AppCompatActivity {
         currentUser = getSharedPreferences("CurrentUser", MODE_PRIVATE);
         editCurrentUser = currentUser.edit();
         editCurrentUser.apply();
-        String username = currentUser.getString("username", null);
+        username = currentUser.getString("username", null);
+        exerName = new LinkedList<>();
+
         fitDB = new FitnessDB(this, username);
 
-        
-
-        LinkedList<String> exerName = new LinkedList<>();
+//        exercises = fitDB.getELists();
         for (Elist e: exercises) {
             exerName.add(e.toString());
         }

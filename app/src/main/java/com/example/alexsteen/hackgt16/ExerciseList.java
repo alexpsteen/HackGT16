@@ -34,6 +34,8 @@ public class ExerciseList extends AppCompatActivity {
         String username = currentUser.getString("username", null);
         fitDB = new FitnessDB(this, username);
 
+//        list = fitDB.getEntries(username);
+
         String bundle = getIntent().getStringExtra("bundleID");
 
         if (bundle != null) {
@@ -41,6 +43,12 @@ public class ExerciseList extends AppCompatActivity {
         }
         TextView head = (TextView) findViewById(R.id.eHeader);
         head.setText(eHeader);
+        LinkedList<String> exerName = new LinkedList<>();
+
+        for (exerciseEntry e : list) {
+            exerName.add(e.getName());
+        }
+        exerView.setAdapter(new ArrayAdapter(this, R.layout.simple_list_item, exerName));
     }
 
 
