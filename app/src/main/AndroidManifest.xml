@@ -24,6 +24,7 @@
         <activity android:name=".ExerciseList"></activity>
         <activity android:name=".FitnessHomepage"></activity>
         <activity android:name=".Registration"></activity>
+        <activity android:name=".Timer"></activity>
     </application>
 
 </manifest>

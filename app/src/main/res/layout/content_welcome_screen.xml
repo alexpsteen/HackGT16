@@ -12,4 +12,17 @@
         tools:context="com.example.alexsteen.hackgt16.WelcomeScreen"
         tools:showIn="@layout/activity_welcome_screen">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Welcome"/>
+
+    <Button android:id="@+id/FitnessButton"
+    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToFitnessWelcome"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp" />
+
 </RelativeLayout>
