@@ -82,44 +82,20 @@ public class FitnessDB extends SQLiteOpenHelper{
         db.close();
     }
 
-    public LinkedList<String> getNames(String listID) {
-        LinkedList<String> names = new LinkedList<>();
+    public LinkedList<exerciseEntry> getEntries(String listID) {
+        LinkedList<exerciseEntry> entries = new LinkedList<>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM " + this.username + "-" + TABLE_FITNESS + " WHERE "
                 + COLUMN_LIST_ID + " = '" + listID + "';", null);
         c.moveToFirst();
         while(!c.isAfterLast()) {
-            names.add(c.getString(c.getColumnIndex(COLUMN_NAME)));
+            entries.add(new exerciseEntry(c.getString(c.getColumnIndex(COLUMN_NAME)), c.getInt(c.getColumnIndex(COLUMN_SETS)),
+                    c.getInt(c.getColumnIndex(COLUMN_REPS))));
             c.moveToNext();
         }
         c.close();
         db.close();
-        return names;
-    }
-
-    public int getReps(String listID, String name) {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + this.username + "-" + TABLE_FITNESS + "WHERE"
-        + COLUMN_LIST_ID + " = '" + listID + "' AND " + COLUMN_NAME + " = '"
-                + name + "';",null);
-        c.moveToFirst();
-        int numReps = c.getInt(c.getColumnIndex(COLUMN_REPS));
-        c.close();
-        db.close();
-        return numReps;
-
-    }
-
-    public int getSets(String listID, String name) {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + this.username + "-" + TABLE_FITNESS + "WHERE"
-                + COLUMN_LIST_ID + " = '" + listID + "' AND " + COLUMN_NAME + " = '"
-                + name + "';",null);
-        c.moveToFirst();
-        int numSets = c.getInt(c.getColumnIndex(COLUMN_SETS));
-        c.close();
-        db.close();
-        return numSets;
+        return entries;
     }
 
     public boolean isCompleted(String listID, String name) {
