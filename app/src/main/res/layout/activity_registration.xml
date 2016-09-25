@@ -7,6 +7,203 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.alexsteen.hackgt16.Registration">
+    tools:context="com.example.alexsteen.hackgt16.Registration"
+    android:background="#fcae39">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/name"
+        android:textColor="#FFFFFF"
+        android:id="@+id/fullnameprompt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/fullnameblank"
+        android:layout_below="@+id/fullnameprompt"
+        android:layout_alignParentStart="true"
+        android:background="#f0a12e"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/username"
+        android:textColor="#FFFFFF"
+        android:id="@+id/usernameprompt2"
+        android:layout_below="@+id/fullnameblank"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/usernameblank2"
+        android:layout_below="@+id/usernameprompt2"
+        android:layout_alignParentStart="true"
+        android:background="#f0a12e"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/password"
+        android:textColor="#FFFFFF"
+        android:id="@+id/passwordprompt2"
+        android:layout_below="@+id/usernameblank2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordblank2"
+        android:layout_below="@+id/passwordprompt2"
+        android:layout_alignParentStart="true"
+        android:background = "#f0a12e"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/age"
+        android:textColor="#FFFFFF"
+        android:id="@+id/ageprompt"
+        android:layout_below="@+id/passwordblank2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/ageblank"
+        android:layout_below="@+id/ageprompt"
+        android:layout_alignEnd="@+id/passwordprompt2"
+        android:background = "#f0a12e"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/height"
+        android:textColor="#FFFFFF"
+        android:id="@+id/heightprompt"
+        android:layout_alignTop="@+id/ageprompt"
+        android:layout_toEndOf="@+id/usernameprompt2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/feet"
+        android:textColor="#FFFFFF"
+        android:id="@+id/feetprompt"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@+id/ageblank"
+        android:layout_toStartOf="@+id/button4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/feetblank"
+        android:background = "#f0a12e"
+        android:width="60dp"
+        android:layout_alignBottom="@+id/feetprompt"
+        android:layout_toEndOf="@+id/heightprompt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/inches"
+        android:textColor="#FFFFFF"
+        android:id="@+id/inchesprompt"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/ageprompt"
+        android:layout_toEndOf="@+id/feetblank" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/inchesblank"
+        android:background = "#f0a12e"
+        android:layout_marginLeft="15dp"
+        android:width="60dp"
+        android:layout_alignBottom="@+id/inchesprompt"
+        android:layout_toEndOf="@+id/inchesprompt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/weight"
+        android:textColor="#FFFFFF"
+        android:id="@+id/weightprompt"
+        android:layout_below="@+id/feetblank"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/weightblank"
+        android:layout_below="@+id/weightprompt"
+        android:layout_alignParentStart="true"
+        android:background = "#f0a12e"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/itsfittime"
+        android:id="@+id/button4"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:backgroundTint="@color/bright_foreground_material_dark"
+        android:width="200dp"
+        android:textColor="@color/leafy_green"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="goToWelcomeScreen"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="consultant"
+        android:textColor="#FFFFFF"
+        android:textSize="22dp"
+        android:id="@+id/consultant"
+        android:checked="false"
+        android:layout_below="@+id/weightblank"
+        android:layout_alignParentStart="true"
+        />
 
 </RelativeLayout>
