@@ -31,7 +31,7 @@ public class Checklist extends AppCompatActivity {
     public void addEntry(View view) {
         EditText newEntry = (EditText) findViewById(R.id.newEntry);
         Elist elist = new Elist(newEntry.getText().toString());
-        if (elist.equals("") || elist == null) {
+        if (newEntry.getText().toString().matches("")) {
             return;
         }
         exercises.add(0, elist);

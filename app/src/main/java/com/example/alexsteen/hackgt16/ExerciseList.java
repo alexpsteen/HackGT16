@@ -39,7 +39,7 @@ public class ExerciseList extends AppCompatActivity {
     public void addEntry(View view) {
         EditText newEntry = (EditText) findViewById(R.id.newEntry);
         exerciseEntry entry = new exerciseEntry(newEntry.getText().toString());
-        if (entry.equals("") || entry == null) {
+        if (newEntry.getText().toString().matches("")) {
             return;
         }
         list.add(0, entry);
