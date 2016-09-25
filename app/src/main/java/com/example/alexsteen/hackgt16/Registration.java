@@ -48,12 +48,12 @@ public class Registration extends AppCompatActivity {
         String un = aUserName.getText().toString();
         String pw = aPassWord.getText().toString();
         int a = Integer.parseInt(aAge.getText().toString());
-        String ft = Integer.parseInt(aFeet.getText().toString());
-        String in = Integer.parseInt(aInches.getText().toString());
+        int ft = Integer.parseInt(aFeet.getText().toString());
+        int in = Integer.parseInt(aInches.getText().toString());
         int wt = Integer.parseInt(aWeight.getText().toString());
         boolean aConsultant = consCheck();
 
-        User newUser = User(n,un,pw,)
+        //User newUser = User(n,un,pw,);
 
 
     }
