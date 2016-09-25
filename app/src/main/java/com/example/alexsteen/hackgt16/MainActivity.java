@@ -33,5 +33,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void goToRegistrationScreen(View view) {
+        Intent i = new Intent(this, Registration.class);
+        startActivity(i);
+    }
+
 
 }
