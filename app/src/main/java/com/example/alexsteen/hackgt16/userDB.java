@@ -34,7 +34,7 @@ public class userDB extends SQLiteOpenHelper{
                 + COLUMN_PASSWORD + " TEXT, "
                 + COLUMN_NAME + " TEXT, "
                 + COLUMN_ISCONSULTANT + " INTEGER, "
-                + COLUMN_HEIGHT + " INTEGER, "
+                + COLUMN_HEIGHT + " DOUBLE, "
                 + COLUMN_WEIGHT + " INTEGER, "
                 + COLUMN_AGE + " INTEGER "
                 + ");";
