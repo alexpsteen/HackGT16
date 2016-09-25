@@ -30,12 +30,7 @@ public class Registration extends AppCompatActivity {
         }
     }
 
-    public void goToWelcomeScreen(View view) {
-        Intent i = new Intent(this, WelcomeScreen.class);
-        startActivity(i);
-    }
-
-    public void createUser() {
+    public void createUser(View v) {
         EditText aName = (EditText)findViewById(R.id.fullnameblank);
         EditText aUserName = (EditText)findViewById(R.id.usernameblank2);
         EditText aPassWord = (EditText)findViewById(R.id.passwordblank2);
@@ -52,8 +47,13 @@ public class Registration extends AppCompatActivity {
         String in = aInches.getText().toString();
         String wt = aWeight.getText().toString();
         boolean aConsultant = consCheck();
-
-
+        User newUser = new User(n,un,pw,Integer.parseInt(a),Integer.parseInt(ft) + (Integer.parseInt(in)/12),Integer.parseInt(wt),aConsultant);
+        boolean x = db.containsUsername(un);
+        if(!x) {
+            db.addUser(newUser);
+            Intent i = new Intent(this, LoginScreen.class);
+            startActivity(i);
+        }
     }
 
 
