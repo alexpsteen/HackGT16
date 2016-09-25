@@ -20,8 +20,10 @@
             android:label="@string/title_activity_welcome_screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginScreen" />
-        <activity android:name=".FitnessHomepage" />
-        <activity android:name=".Registration" />
+        <activity android:name=".Checklist" />
+        <activity android:name=".ExerciseList"></activity>
+        <activity android:name=".FitnessHomepage"></activity>
+        <activity android:name=".Registration"></activity>
         <activity android:name=".Timer"></activity>
     </application>
 

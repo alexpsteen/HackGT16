@@ -14,6 +14,10 @@ public class exerciseEntry {
         num_reps = reps;
     }
 
+    public exerciseEntry(String name) {
+        this(name, 0, 0);
+    }
+
     public void changeName(String newName) {
         name = newName;
     }
