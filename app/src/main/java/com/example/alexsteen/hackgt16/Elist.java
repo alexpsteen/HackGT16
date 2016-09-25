@@ -28,5 +28,9 @@ public class Elist {
         return exercises;
     }
 
+    public String toString() {
+        return name;
+    }
+
 
 }
