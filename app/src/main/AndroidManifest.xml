@@ -22,6 +22,8 @@
         <activity android:name=".LoginScreen" />
         <activity android:name=".Checklist" />
         <activity android:name=".ExerciseList"></activity>
+        <activity android:name=".FitnessHomepage"></activity>
+        <activity android:name=".Registration"></activity>
     </application>
 
 </manifest>
