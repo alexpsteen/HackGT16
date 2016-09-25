@@ -18,6 +18,12 @@ public class Checklist extends AppCompatActivity {
     private ListView exerView;
     private String defaultNew = "";
 
+    private SharedPreferences.Editor editCurrentUser;
+    private SharedPreferences currentUser;
+
+
+    private FitnessDB fitDB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,19 @@ public class Checklist extends AppCompatActivity {
         exerView = (ListView) findViewById(R.id.listView);
 
         //EditText newEntry = (EditText) findViewById(R.id.newEntry);
+        currentUser = getSharedPreferences("CurrentUser", MODE_PRIVATE);
+        editCurrentUser = currentUser.edit();
+        editCurrentUser.apply();
+        String username = currentUser.getString("username", null);
+        fitDB = new FitnessDB(this, username);
+
+        
+
+        LinkedList<String> exerName = new LinkedList<>();
+        for (Elist e: exercises) {
+            exerName.add(e.toString());
+        }
+        exerView.setAdapter(new ArrayAdapter(this, R.layout.simple_list_item, exerName));
     }
 
     public void addEntry(View view) {
@@ -38,9 +57,7 @@ public class Checklist extends AppCompatActivity {
         exercises.add(0, elist);
 
         newEntry.setText(defaultNew);
-
         LinkedList<String> exerName = new LinkedList<>();
-
         for (Elist e: exercises) {
             exerName.add(e.toString());
         }
@@ -58,5 +75,4 @@ public class Checklist extends AppCompatActivity {
             }
         });
     }
-
 }

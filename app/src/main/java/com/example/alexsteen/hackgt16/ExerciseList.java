@@ -1,6 +1,6 @@
 package com.example.alexsteen.hackgt16;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,15 +17,24 @@ public class ExerciseList extends AppCompatActivity {
     private String eHeader = "";
     private ListView exerView;
 
+    private SharedPreferences.Editor editCurrentUser;
+    private SharedPreferences currentUser;
+
+    private FitnessDB fitDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_list);
         list = new LinkedList<>();
         exerView = (ListView) findViewById(R.id.exerciseLV);
+        currentUser = getSharedPreferences("CurrentUser", MODE_PRIVATE);
+        editCurrentUser = currentUser.edit();
+        editCurrentUser.apply();
+        String username = currentUser.getString("username", null);
+        fitDB = new FitnessDB(this, username);
 
         String bundle = getIntent().getStringExtra("bundleID");
-        System.out.println("BUNDLE: " + bundle);
 
         if (bundle != null) {
             eHeader = bundle;
